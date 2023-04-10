@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { generateArtistName } from '../functions/generateArtistName';
 import { generateArtistDobAndArtworkDate } from '../functions/generateDates';
-import '../styles/artCard.css';
 import { generateArtTitle } from '../functions/generateArtTitle';
+import { generateProseSentence } from '../functions/generateProse';
+import '../styles/artCard.css';
 
 export const ArtCard = () => {
   const [idToRegenerateCompo, setId] = useState('123');
@@ -29,9 +30,9 @@ export const ArtCard = () => {
             <div className="artworkDate">{artworkDate}</div>
           </span>
           <div className="artCardProseBlock">
-            <p className="firstParagaph">First paragraph</p>
-            <p className="secondParagaph">Second paragraph</p>
-            <p className="thirdParagaph">Third paragraph</p>
+            <p className="firstParagaph">{generateProseSentence()}</p>
+            <p className="secondParagaph">{generateProseSentence()}</p>
+            <p className="thirdParagaph">{generateProseSentence()}</p>
           </div>
         </div>
       </div>

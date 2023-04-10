@@ -1,0 +1,19 @@
+{
+   "positives": [
+        "strength",
+        "reisilience",
+        "dexterity",
+        "intelligence",
+        "wisdom",
+        "charisma",
+        "constitution",
+        "perception",
+        "luck",
+        "willpower",
+        "endurance",
+        "speed",
+        "agility",
+        "health",
+        "stamina"
+    ]
+}
