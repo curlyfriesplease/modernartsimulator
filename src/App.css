@@ -1,16 +1,27 @@
 .App {
   text-align: center;
-  min-height: 100vh;
-  background-color: lightpink;
+  min-width: 100vh;
+  background-color: aqua;
+  background-image: url(./images/emptyGallery.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .innerBody {
-  background-color: #bcbcff;
-
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.debuggingButton {
+  position: fixed;
+  bottom: 50px;
 }

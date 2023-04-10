@@ -25,7 +25,10 @@ const createOneLiner = () => {
   ];
   const introductoryPhrase =
     introductoryPhrases[Math.floor(Math.random() * introductoryPhrases.length)];
-  return `${randomWord1}: ${introductoryPhrase} ${randomWord2},`;
+  const randomBoolean = Math.random() >= 0.5;
+  return randomBoolean
+    ? `${randomWord1}: ${introductoryPhrase} ${randomWord2}, `
+    : `${randomWord1}, `;
 };
 
 export const generateArtTitle = (setArtTitle) => {

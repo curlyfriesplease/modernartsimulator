@@ -32,11 +32,10 @@ export const ArtCard = () => {
           <div className="artCardProseBlock">
             <p className="firstParagaph">{generateProseSentence()}</p>
             <p className="secondParagaph">{generateProseSentence()}</p>
-            <p className="thirdParagaph">{generateProseSentence()}</p>
           </div>
         </div>
       </div>
-      <button onClick={() => setId(Math.random())}>Regenerate</button>
+      {/* <button onClick={() => setId(Math.random())}>Regenerate</button> */}
     </>
   );
 };

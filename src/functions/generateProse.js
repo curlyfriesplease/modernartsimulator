@@ -3,22 +3,31 @@ export const generateProseSentence = () => {
   const sentenceType = Math.floor(Math.random() * 9);
   switch (sentenceType) {
     case 0:
+      console.log('calling sentenceTypeA');
       return sentenceTypeA();
     case 1:
+      console.log('calling sentenceTypeB');
       return sentenceTypeB();
     case 2:
+      console.log('calling sentenceTypeC');
       return sentenceTypeC();
     case 3:
+      console.log('calling sentenceTypeD');
       return sentenceTypeD();
     case 4:
+      console.log('calling sentenceTypeE');
       return sentenceTypeE();
     case 5:
+      console.log('calling sentenceTypeF');
       return sentenceTypeF();
     case 6:
+      console.log('calling sentenceTypeG');
       return sentenceTypeG();
     case 7:
+      console.log('calling sentenceTypeH');
       return sentenceTypeH();
     case 8:
+      console.log('calling sentenceTypeI');
       return sentenceTypeI();
   }
 };
@@ -166,4 +175,13 @@ const sentenceTypeH = () => {
   return `Although the complex imagery of the painting resists easy interpretation, it appears to be a comment on ${comment1}, possibly reflecting ${reflection1}. `;
 };
 
-const sentenceTypeI = () => {};
+const sentenceTypeI = () => {
+  // The piece is part of the artist's ongoing exploration of X and of their own Y
+  const exploration1 =
+    randomWords.words[Math.floor(Math.random() * randomWords.words.length)];
+  const exploration2 =
+    positiveWords.positives[
+      Math.floor(Math.random() * positiveWords.positives.length)
+    ];
+  return `The piece is part of the artist's ongoing exploration of ${exploration1} and of their own ${exploration2}. `;
+};
