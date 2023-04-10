@@ -5,13 +5,10 @@ export const Image = ({ randomImage, setRandomImage }) => {
 
   return (
     <>
-      <div>hello</div>
-      <img src={randomImage} />
       <button onClick={() => randomImageFromApiNinjas(setRandomImage)}>
-        Click me
+        Fetch image
       </button>
       {randomImage && <img src={randomImage} alt="random" />}
-      <p>imageURL is `${randomImage}`</p>
     </>
   );
 };

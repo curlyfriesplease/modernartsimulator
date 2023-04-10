@@ -1,0 +1,53 @@
+.artCardOuter {
+  max-width: 850px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+  margin: 20px 10px 20px 10px;
+}
+
+.artCardInner {
+  /* position: relative; */
+  background: linear-gradient(71deg, #eaebde, #dbd5d5, rgb(184, 182, 182));
+  background-clip: padding-box;
+  border-radius: 3px;
+  padding: 40px;
+  text-align: start;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Hind', sans-serif;
+}
+
+.artCardBlock {
+  width: 100%;
+  margin: 7px 0 7px 0;
+}
+
+.artistName {
+  font-size: 32px;
+  font-weight: 600;
+  display: inline;
+}
+
+.artistDob {
+  font-size: 28px;
+  display: inline;
+}
+
+.artTitle {
+  display: inline;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.artworkDate {
+  display: inline;
+  font-size: 28px;
+}
+
+.artCardProseBlock {
+  margin-top: 3px;
+  font-weight: 300;
+}
