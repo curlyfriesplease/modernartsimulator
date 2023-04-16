@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react';
 import { generateArtistName } from '../functions/generateArtistName';
 import { generateArtistDobAndArtworkDate } from '../functions/generateDates';
 import { generateArtTitle } from '../functions/generateArtTitle';
-import { generateProseSentence } from '../functions/generateProse';
+import {
+  generateFirstProseSentence,
+  generateSecondProseSentence,
+} from '../functions/generateProse';
 import '../styles/artCard.css';
 
 export const ArtTextCard = () => {
@@ -30,8 +33,8 @@ export const ArtTextCard = () => {
             <div className="artworkDate">{artworkDate}</div>
           </span>
           <div className="artCardProseBlock">
-            <p className="firstParagaph">{generateProseSentence()}</p>
-            <p className="secondParagaph">{generateProseSentence()}</p>
+            <p className="firstParagaph">{generateFirstProseSentence()}</p>
+            <p className="secondParagaph">{generateSecondProseSentence()}</p>
           </div>
         </div>
       </div>
