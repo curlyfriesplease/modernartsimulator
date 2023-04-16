@@ -1,4 +1,5 @@
 import React from 'react';
+import { useId } from 'react';
 import '../styles/image.css';
 
 import { RandomHLine, RandomBlob } from 'react-random-shapes';
@@ -19,6 +20,8 @@ export const GenerateRandomShapesArtwork = (setRandomImage) => {
   // });
   const randomColour1 = `hsl(${Math.random() * 360}, 100%, 50%)`;
   const randomColour2 = `hsl(${Math.random() * 360}, 100%, 50%)`;
+  const BlobId1 = useId();
+  const BlobId2 = useId();
 
   return (
     <>
@@ -38,6 +41,7 @@ export const GenerateRandomShapesArtwork = (setRandomImage) => {
       />
       <RandomBlob
         className="absoluteChildFullSize"
+        key={BlobId1}
         size={1}
         numControls={7}
         options={{
@@ -48,6 +52,7 @@ export const GenerateRandomShapesArtwork = (setRandomImage) => {
       />
       <RandomBlob
         className="absoluteChildFullSize"
+        key={BlobId2}
         size={2}
         numControls={7}
         options={{

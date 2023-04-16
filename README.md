@@ -2,6 +2,10 @@
 
 This app simulates the frustration of reading the modern art description prose at modern art galleries, particularly the Pompidou Centre.
 
+## Setup
+
+.env needs to be added. Copy env.example and add keys for thecatapi and api-ninjas.com
+
 ## Credits
 
 - Loading animation by Minesh Mitha https://codepen.io/Minesh93

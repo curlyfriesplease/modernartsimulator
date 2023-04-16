@@ -34,7 +34,7 @@ export const generateArtTitle = (setArtTitle) => {
   // one in 10 times, call randomHistoricalEvent, otherwise call createOneLiner
   // const randomBoolean = Math.random() >= 0.9;
   // if (randomBoolean) {
-  //   randomHistoricalEvent(setArtTitle);
+  // randomHistoricalEvent(setArtTitle);
   // } else {
   setArtTitle(createOneLiner());
   // }

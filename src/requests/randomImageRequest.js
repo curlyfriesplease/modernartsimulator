@@ -5,7 +5,7 @@ export function randomImageFromApiNinjas(setRandomImage) {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'X-Api-Key': '3IFz8W6jYgx4boS9txijrLrk2xpnr7bykqvpV8uS',
+      'X-Api-Key': process.env.REACT_APP_APININJAS_API_KEY,
       Accept: 'image/jpeg',
     },
   })
