@@ -5,7 +5,7 @@ import { generateArtTitle } from '../functions/generateArtTitle';
 import { generateProseSentence } from '../functions/generateProse';
 import '../styles/artCard.css';
 
-export const ArtCard = () => {
+export const ArtTextCard = () => {
   const [idToRegenerateCompo, setId] = useState('123');
 
   const [artTitle, setArtTitle] = useState('');

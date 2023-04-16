@@ -1,6 +1,5 @@
 import { randomHistoricalEvent } from '../requests/historicalEvent';
 
-//write a function to get a random word from array ../sources/randomWords.json
 const createOneLiner = () => {
   const randomWords = require('../sources/randomWords.json');
   const randomWordPreCapitalisation =
@@ -32,6 +31,11 @@ const createOneLiner = () => {
 };
 
 export const generateArtTitle = (setArtTitle) => {
-  setArtTitle(createOneLiner());
+  // one in 10 times, call randomHistoricalEvent, otherwise call createOneLiner
+  // const randomBoolean = Math.random() >= 0.9;
+  // if (randomBoolean) {
   //   randomHistoricalEvent(setArtTitle);
+  // } else {
+  setArtTitle(createOneLiner());
+  // }
 };

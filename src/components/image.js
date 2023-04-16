@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { randomImageFromApiNinjas } from '../requests/randomImageRequest';
+import { GenerateRandomShapesArtwork } from '../functions/generateRandomShapesArtwork';
 import '../styles/image.css';
 import '../App.css';
 
-export const Image = ({ randomImage, setRandomImage }) => {
-  const [isLoading, setIsLoading] = useState(true);
+export const Image = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [randomImage, setRandomImage] = useState(null);
 
   useEffect(() => {
     if (randomImage) {
@@ -12,11 +14,16 @@ export const Image = ({ randomImage, setRandomImage }) => {
     }
   }, [randomImage]);
 
+  // Re-enable this to fetch a new image on page load
+  // useEffect(() => {
+  //   randomImageFromApiNinjas(setRandomImage);
+  // }, []);
+
   return (
     <>
       <button
         className="debuggingButton"
-        onClick={() => randomImageFromApiNinjas(setRandomImage)}
+        onClick={() => GenerateRandomShapesArtwork(setRandomImage)}
       >
         Fetch image
       </button>
@@ -27,7 +34,8 @@ export const Image = ({ randomImage, setRandomImage }) => {
           </div>
         )}
         {!isLoading && (
-          <img src={randomImage} alt="random" className="displayedImage" />
+          // <img src={randomImage} alt="random" className="displayedImage" />
+          <GenerateRandomShapesArtwork />
         )}
       </div>
     </>

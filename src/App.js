@@ -2,13 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import { Image } from './components/image';
 import { useState } from 'react';
-import { generateArtistName } from './functions/generateArtistName';
-import { ArtCard } from './components/artCard';
+import { ArtTextCard } from './components/artTextCard';
 import { DenyMobileView } from './components/denyMobileView';
 import { useEffect } from 'react';
 
 function App() {
-  const [randomImage, setRandomImage] = useState(null);
   const [viewedFromMobile, setViewedFromMobile] = useState(false);
   const [windowWidth, setWindowWidth] = useState([window.innerWidth]);
 
@@ -41,8 +39,8 @@ function App() {
       {!viewedFromMobile && (
         <div className="App">
           <div className="innerBody">
-            <Image randomImage={randomImage} setRandomImage={setRandomImage} />
-            <ArtCard />
+            <Image />
+            <ArtTextCard />
           </div>
         </div>
       )}
