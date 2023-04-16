@@ -1,37 +1,3 @@
-export const generateProseSentence = () => {
-  // call and return 1 of 9 functions at random, which are named sentenceTypeA through sentenceTypeI
-  const sentenceType = Math.floor(Math.random() * 9);
-  switch (sentenceType) {
-    case 0:
-      console.log('calling sentenceTypeA');
-      return sentenceTypeA();
-    case 1:
-      console.log('calling sentenceTypeB');
-      return sentenceTypeB();
-    case 2:
-      console.log('calling sentenceTypeC');
-      return sentenceTypeC();
-    case 3:
-      console.log('calling sentenceTypeD');
-      return sentenceTypeD();
-    case 4:
-      console.log('calling sentenceTypeE');
-      return sentenceTypeE();
-    case 5:
-      console.log('calling sentenceTypeF');
-      return sentenceTypeF();
-    case 6:
-      console.log('calling sentenceTypeG');
-      return sentenceTypeG();
-    case 7:
-      console.log('calling sentenceTypeH');
-      return sentenceTypeH();
-    case 8:
-      console.log('calling sentenceTypeI');
-      return sentenceTypeI();
-  }
-};
-
 const randomWords = require('../sources/randomWords.json');
 const influenceWords = require('../sources/influences.json');
 const positiveWords = require('../sources/positives.json');
@@ -40,6 +6,47 @@ const feelingsWords = require('../sources/feelings.json');
 const peopleplacesthingsWords = require('../sources/peoplePlacesThings.json');
 const groupsWords = require('../sources/groups.json');
 const elementsWords = require('../sources/elements.json');
+
+export const generateFirstProseSentence = () => {
+  // call and return 1 of 5 functions at random
+  const sentenceType = Math.floor(Math.random() * 5);
+  switch (sentenceType) {
+    case 0:
+      console.log('calling sentenceTypeA');
+      return sentenceTypeA();
+    case 1:
+      console.log('calling sentenceTypeC');
+      return sentenceTypeC();
+    case 2:
+      console.log('calling sentenceTypeE');
+      return sentenceTypeE();
+    case 3:
+      console.log('calling sentenceTypeG');
+      return sentenceTypeG();
+    case 4:
+      console.log('calling sentenceTypeH');
+      return sentenceTypeH();
+  }
+};
+
+export const generateSecondProseSentence = () => {
+  // call and return 1 of 4 functions at random
+  const sentenceType = Math.floor(Math.random() * 4);
+  switch (sentenceType) {
+    case 0:
+      console.log('calling sentenceTypeB');
+      return sentenceTypeB();
+    case 1:
+      console.log('calling sentenceTypeD');
+      return sentenceTypeD();
+    case 2:
+      console.log('calling sentenceTypeF');
+      return sentenceTypeF();
+    case 3:
+      console.log('calling sentenceTypeI');
+      return sentenceTypeI();
+  }
+};
 
 const sentenceTypeA = () => {
   // work explores the relationship between X + Y
@@ -68,7 +75,7 @@ const sentenceTypeB = () => {
     negativeWords.negatives[
       Math.floor(Math.random() * negativeWords.negatives.length)
     ];
-  return `Influenced by ${influence1} and ${influence2}, variations are created from ${positive1} and ${negative1}. `;
+  return `Influenced by ${influence1} and ${influence2}, meaningful expressions are created from ${positive1} and ${negative1}. `;
 };
 
 const sentenceTypeC = () => {

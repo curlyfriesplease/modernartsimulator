@@ -5,10 +5,6 @@ import { ArtTextCard } from './components/artTextCard';
 import { DenyMobileView } from './components/denyMobileView';
 import { useEffect } from 'react';
 
-console.log(
-  `REACT_APP_API_NINJAS_KEY: ${process.env.REACT_APP_APININJAS_API_KEY}`
-);
-
 function App() {
   const [viewedFromMobile, setViewedFromMobile] = useState(false);
   const [windowWidth, setWindowWidth] = useState([window.innerWidth]);
