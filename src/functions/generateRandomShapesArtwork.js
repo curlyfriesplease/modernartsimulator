@@ -5,18 +5,18 @@ import { RandomHLine, RandomBlob } from 'react-random-shapes';
 
 export const GenerateRandomShapesArtwork = (setRandomImage) => {
   console.log('generateRandomShapesArtwork() called');
-  const numLines = Math.floor(Math.random() * 7);
-  // const numLines = 6;
-  const numControls = Math.floor(Math.random() * 10);
-  // const numControls = 10;
-  const rng = Array.from(new Array(numLines), (x, i) => i);
-  const start = Math.random() * 360;
-  const styles = rng.map((x) => {
-    return {
-      fill: 'transparent',
-      stroke: `hsl(${start + (x / numLines) * 360}, 100%, 50%)`,
-    };
-  });
+  // const numLines = Math.floor(Math.random() * 30);
+  const numLines = 6;
+  // const numControls = Math.floor(Math.random() * 10);
+  const numControls = 10;
+  // const rng = Array.from(new Array(numLines), (x, i) => i);
+  // const start = Math.random() * 360;
+  // const styles = rng.map((x) => {
+  //   return {
+  //     fill: 'transparent',
+  //     stroke: `hsl(${start + (x / numLines) * 360}, 100%, 50%)`,
+  //   };
+  // });
   const randomColour1 = `hsl(${Math.random() * 360}, 100%, 50%)`;
   const randomColour2 = `hsl(${Math.random() * 360}, 100%, 50%)`;
 
@@ -30,7 +30,10 @@ export const GenerateRandomShapesArtwork = (setRandomImage) => {
           numLines: numLines,
           numControls: numControls,
           debug: false,
-          styleMid: styles,
+          styleMid: {
+            fill: 'transparent',
+            stroke: `hsl(10, 100%, 50%)`,
+          },
         }}
       />
       <RandomBlob
