@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { randomImageFromApiNinjas } from '../requests/randomImageRequest';
 import { ShowRandomImage } from '../functions/showRandomImage';
 import { GenerateRandomShapesArtwork } from '../functions/generateRandomShapesArtwork';
+import { GenerateCatArt } from '../functions/generateCatArt';
 import '../styles/image.css';
 import '../App.css';
 
@@ -13,6 +14,17 @@ export const Image = () => {
   //   randomImageFromApiNinjas(setRandomImage);
   // }, []);
 
+  const selectRandomImageType = () => {
+    const randomInt = Math.floor(Math.random() * 3);
+    if (randomInt === 0) {
+      return <ShowRandomImage setIsLoading={setIsLoading} />;
+    } else if (randomInt === 1) {
+      return <GenerateRandomShapesArtwork />;
+    } else {
+      return <GenerateCatArt setIsLoading={setIsLoading} />;
+    }
+  };
+
   return (
     <div className="imageContainer">
       {isLoading && (
@@ -20,9 +32,7 @@ export const Image = () => {
           <div className="loading-dot"></div>
         </div>
       )}
-      <ShowRandomImage setIsLoading={setIsLoading} />
+      {selectRandomImageType()}
     </div>
   );
 };
-
-// <GenerateRandomShapesArtwork />

@@ -5,6 +5,7 @@
   transform: translate(-50%, -50%);
   width: 33vw;
   height: 33vh;
+  overflow: hidden;
 }
 
 .displayedImage {
@@ -23,6 +24,23 @@
 
 .showOnTop {
   z-index: 2;
+}
+
+.catImage {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+  left: 10%;
+  top: 20%;
+}
+
+.historySentence {
+  position: absolute;
+  color: rgba(2, 0, 36, 1);
+  font-size: 12px;
+  left: 20%;
+  top: 20%;
+  stroke: rgb(255, 255, 255);
 }
 
 .drawing {

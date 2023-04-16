@@ -1,4 +1,4 @@
-export async function randomHistoricalEvent(setArtTitle) {
+export async function randomHistoricalEvent(setter) {
   //randomly select from 'peace', 'war', 'king', or 'animals'
   const text = () => {
     const random = Math.floor(Math.random() * 4);
@@ -51,7 +51,7 @@ export async function randomHistoricalEvent(setArtTitle) {
     .then((response) => response.json())
     .then((response) => {
       console.log(response[0].event);
-      return setArtTitle(response[0].event);
+      return setter(response[0].event);
     })
     // .then((json) => {
     //   return json();

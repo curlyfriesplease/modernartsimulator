@@ -5,7 +5,7 @@ import '../styles/image.css';
 import { RandomHLine, RandomBlob } from 'react-random-shapes';
 
 export const GenerateRandomShapesArtwork = (setRandomImage) => {
-  console.log('generateRandomShapesArtwork() called');
+  console.log('2 GenerateRandomShapesArtwork');
   // const numLines = Math.floor(Math.random() * 30);
   const numLines = 6;
   // const numControls = Math.floor(Math.random() * 10);
@@ -37,28 +37,6 @@ export const GenerateRandomShapesArtwork = (setRandomImage) => {
             fill: 'transparent',
             stroke: `hsl(10, 100%, 50%)`,
           },
-        }}
-      />
-      <RandomBlob
-        className="absoluteChildFullSize"
-        key={BlobId1}
-        size={1}
-        numControls={7}
-        options={{
-          numBlobs: 2,
-          numControls: 4,
-          style: { fill: randomColour1 },
-        }}
-      />
-      <RandomBlob
-        className="absoluteChildFullSize"
-        key={BlobId2}
-        size={2}
-        numControls={7}
-        options={{
-          numBlobs: 5,
-          numControls: 7,
-          style: { fill: randomColour2 },
         }}
       />
     </>

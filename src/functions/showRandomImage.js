@@ -5,6 +5,8 @@ import '../styles/image.css';
 export const ShowRandomImage = ({ setIsLoading }) => {
   const [randomImage, setRandomImage] = useState(null);
 
+  console.log('1 ShowRandomImage');
+
   //   useEffect(() => {
   //     if (randomImage) {
   //       setIsLoading(false);
