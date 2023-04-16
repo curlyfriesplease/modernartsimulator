@@ -11,12 +11,14 @@ import '../styles/artCard.css';
 export const ArtTextCard = () => {
   const [idToRegenerateCompo, setId] = useState('123');
 
+  const [artistName, setArtistName] = useState('');
   const [artTitle, setArtTitle] = useState('');
   const [artistDob, setArtistDob] = useState('');
   const [artworkDate, setArtworkDate] = useState('');
 
   useEffect(() => {
     generateArtTitle(setArtTitle);
+    generateArtistName(setArtistName);
     generateArtistDobAndArtworkDate(setArtistDob, setArtworkDate);
   }, [idToRegenerateCompo]);
 
@@ -25,7 +27,7 @@ export const ArtTextCard = () => {
       <div className="artCardOuter" key={idToRegenerateCompo}>
         <div className="artCardInner">
           <span className="artCardBlock">
-            <div className="artistName">{generateArtistName()}</div>
+            <div className="artistName">{artistName}</div>
             <div className="artistDob">&nbsp;{artistDob}</div>
           </span>
           <span className="artCardBlock">
@@ -38,7 +40,7 @@ export const ArtTextCard = () => {
           </div>
         </div>
       </div>
-      {/* <button onClick={() => setId(Math.random())}>Regenerate</button> */}
+      <button onClick={() => setId(Math.random())}>Regenerate</button>
     </>
   );
 };

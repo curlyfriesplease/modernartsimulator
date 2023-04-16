@@ -1,4 +1,4 @@
-export function generateArtistName() {
+export function generateArtistName(setArtistName) {
   const firstNames = require('../sources/firstNames.json');
   const lastNames = require('../sources/surnames.json');
   const firstName =
@@ -28,8 +28,7 @@ export function generateArtistName() {
       return '';
     }
   };
-  console.log(firstName);
-  console.log(lastName);
   const artistName = `${firstName} ${middleName()}${lastName}`;
-  return artistName;
+  console.log(`Artist name: ${artistName}`);
+  return setArtistName(artistName);
 }

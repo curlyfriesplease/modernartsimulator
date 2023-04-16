@@ -1,4 +1,4 @@
-export function randomImageFromApiNinjas(setRandomImage) {
+export function randomImageFromApiNinjas(setRandomImage, setIsLoading) {
   const category = 'abstract';
   const apiUrl = `https://api.api-ninjas.com/v1/randomimage?category=${category}`;
   fetch(apiUrl, {
@@ -9,6 +9,7 @@ export function randomImageFromApiNinjas(setRandomImage) {
       Accept: 'image/jpeg',
     },
   })
+    .then(console.log('fetching random image'))
     .then((response) => response.body)
     .then((body) => {
       const reader = body.getReader();
@@ -37,6 +38,7 @@ export function randomImageFromApiNinjas(setRandomImage) {
     .then((blob) => URL.createObjectURL(blob))
     // Update image
     .then((url) => setRandomImage(url))
+    .then(setIsLoading(false))
     .catch((error) => {
       console.error('error in execution', error);
     });

@@ -12,19 +12,14 @@ export const generateFirstProseSentence = () => {
   const sentenceType = Math.floor(Math.random() * 5);
   switch (sentenceType) {
     case 0:
-      console.log('calling sentenceTypeA');
       return sentenceTypeA();
     case 1:
-      console.log('calling sentenceTypeC');
       return sentenceTypeC();
     case 2:
-      console.log('calling sentenceTypeE');
       return sentenceTypeE();
     case 3:
-      console.log('calling sentenceTypeG');
       return sentenceTypeG();
     case 4:
-      console.log('calling sentenceTypeH');
       return sentenceTypeH();
   }
 };
@@ -34,16 +29,12 @@ export const generateSecondProseSentence = () => {
   const sentenceType = Math.floor(Math.random() * 4);
   switch (sentenceType) {
     case 0:
-      console.log('calling sentenceTypeB');
       return sentenceTypeB();
     case 1:
-      console.log('calling sentenceTypeD');
       return sentenceTypeD();
     case 2:
-      console.log('calling sentenceTypeF');
       return sentenceTypeF();
     case 3:
-      console.log('calling sentenceTypeI');
       return sentenceTypeI();
   }
 };
