@@ -2,8 +2,9 @@ import { getRandomCatImage } from '../requests/randomCatImage';
 import { useEffect, useState } from 'react';
 import { randomHistoricalEvent } from '../requests/historicalEvent';
 import '../styles/image.css';
+import '../styles/catArt.css';
 
-export const GenerateCatArt = ({ setIsLoading }) => {
+export const GenerateCatArt = ({ isLoading, setIsLoading }) => {
   console.log('3 GenerateCatArt');
 
   const [randomCatImage, setRandomCatImage] = useState(null);
@@ -14,20 +15,16 @@ export const GenerateCatArt = ({ setIsLoading }) => {
   const randomWidthPercentage = Math.floor(Math.random() * 70) + 40;
   const randomHeightPercentage = Math.floor(Math.random() * 70) + 40;
 
-  //   useEffect(() => {
-  //     if (randomImage) {
-  //       setIsLoading(false);
-  //     }
-  //   }, [randomImage]);
-
   useEffect(() => {
     if (!randomCatImage) {
       getRandomCatImage(setRandomCatImage, setIsLoading);
     }
+
     if (historySentence === '') {
       randomHistoricalEvent(setHistorySentence);
     }
 
+    // Rotate the cat image, stretch it to look all weird
     if (randomCatImage) {
       document.getElementById(
         'cat'
@@ -36,17 +33,30 @@ export const GenerateCatArt = ({ setIsLoading }) => {
       document.getElementById(
         'cat'
       ).style.height = `${randomHeightPercentage}%`;
-      if (Math.floor(Math.random() * 4) === 0) {
+      const randomNumberOutOfFour = Math.floor(Math.random() * 5);
+      // sometimes invert it as well
+      if (randomNumberOutOfFour === 0) {
         document.getElementById('cat').style.filter = 'invert(100%)';
       }
+      console.log(`catContainerBackground${randomNumberOutOfFour}`);
+      // Add a random background color to the cat container
+      document.querySelector('#catContainer').className = '';
+      document
+        .querySelector('#catContainer')
+        .classList.add(`catContainerBackground${randomNumberOutOfFour}`);
+    }
 
-      if (historySentence !== '') {
-        document.getElementById(
-          'historySentence'
-        ).style.transform = `rotate(${randomRotationInt2}deg)`;
-      }
+    // Show a random historical event and rotate that badboy
+    if (historySentence !== '') {
+      document.getElementById(
+        'historySentence'
+      ).style.transform = `rotate(${randomRotationInt2}deg)`;
+    }
 
-      setIsLoading(false);
+    if (isLoading && historySentence && randomCatImage) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
     }
   }, [randomCatImage, historySentence]);
 
@@ -54,19 +64,12 @@ export const GenerateCatArt = ({ setIsLoading }) => {
 
   return (
     <>
-      {randomCatImage && (
-        <>
-          <img
-            src={randomCatImage}
-            alt="random"
-            id="cat"
-            className="catImage"
-          />
-          <div id="historySentence" className="historySentence">
-            {historySentence}
-          </div>
-        </>
-      )}
+      <div id="catContainer">
+        <img src={randomCatImage} alt="random" id="cat" className="catImage" />
+        <div id="historySentence" className="historySentence">
+          {historySentence}
+        </div>
+      </div>
     </>
   );
 };

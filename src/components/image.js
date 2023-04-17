@@ -15,13 +15,16 @@ export const Image = () => {
   // }, []);
 
   const selectRandomImageType = () => {
-    const randomInt = Math.floor(Math.random() * 3);
+    // const randomInt = Math.floor(Math.random() * 3);
+    const randomInt = 3;
     if (randomInt === 0) {
       return <ShowRandomImage setIsLoading={setIsLoading} />;
     } else if (randomInt === 1) {
       return <GenerateRandomShapesArtwork />;
     } else {
-      return <GenerateCatArt setIsLoading={setIsLoading} />;
+      return (
+        <GenerateCatArt isLoading={isLoading} setIsLoading={setIsLoading} />
+      );
     }
   };
 
