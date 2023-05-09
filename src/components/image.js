@@ -5,26 +5,25 @@ import { GenerateRandomShapesArtwork } from '../functions/generateRandomShapesAr
 import { GenerateCatArt } from '../functions/generateCatArt';
 import '../styles/image.css';
 import '../App.css';
+import { GeneratePoliticalArt } from '../functions/generatePoliticalArt';
 
 export const Image = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Re-enable this to fetch a new image on page load
-  // useEffect(() => {
-  //   randomImageFromApiNinjas(setRandomImage);
-  // }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const selectRandomImageType = () => {
-    // const randomInt = Math.floor(Math.random() * 3);
-    const randomInt = 3;
-    if (randomInt === 0) {
-      return <ShowRandomImage setIsLoading={setIsLoading} />;
-    } else if (randomInt === 1) {
-      return <GenerateRandomShapesArtwork />;
-    } else {
-      return (
-        <GenerateCatArt isLoading={isLoading} setIsLoading={setIsLoading} />
-      );
+    const randomInt = Math.floor(Math.random() * 3);
+    // const randomInt = 1;
+    switch (randomInt) {
+      case 0:
+        return <ShowRandomImage setIsLoading={setIsLoading} />;
+      case 1:
+        return <GenerateRandomShapesArtwork setIsLoading={setIsLoading} />;
+      case 2:
+        return <GeneratePoliticalArt setIsLoading={setIsLoading} />;
+      default:
+        return (
+          <GenerateCatArt isLoading={isLoading} setIsLoading={setIsLoading} />
+        );
     }
   };
 

@@ -7,17 +7,18 @@ export const ShowRandomImage = ({ setIsLoading }) => {
 
   console.log('1 ShowRandomImage');
 
-  //   useEffect(() => {
-  //     if (randomImage) {
-  //       setIsLoading(false);
-  //     }
-  //   }, [randomImage]);
-
   useEffect(() => {
+    setIsLoading(true);
     if (!randomImage) {
       randomImageFromApiNinjas(setRandomImage, setIsLoading);
     }
   }, []);
+
+  useEffect(() => {
+    if (randomImage) {
+      setIsLoading(false);
+    }
+  }, [randomImage]);
 
   console.log(`randomImage: ${randomImage}`);
 

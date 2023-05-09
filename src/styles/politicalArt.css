@@ -1,0 +1,50 @@
+#politicalContainer {
+  font-family: 'Rubik Wet Paint', cursive;
+}
+
+.politicalContainerBackground1 {
+  color: #48ff0c;
+  background: #a77672;
+  background: radial-gradient(at left top, #a77672, #39490e);
+}
+
+.politicalContainerBackground2 {
+  color: #d846ea;
+  background: #d4ae2d;
+  background: linear-gradient(0deg, #d4ae2d, #29d787);
+}
+
+.politicalContainerBackground3 {
+  color: #091130;
+  background: #db74ee;
+  background: linear-gradient(135deg, #db74ee, #28b7cc);
+}
+
+.politicalContainerBackground4 {
+  color: #5000cf;
+  background: #db8d77;
+  background: radial-gradient(at left top, #db8d77, #b89b5f);
+}
+
+.politicalContainerBackground5 {
+  color: rgb(110 208 255);
+  background: #d846ea;
+  background: radial-gradient(at left top, #d846ea, #2907a8);
+}
+
+.politicalContainerBackgroundText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik Wet Paint', cursive;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  font-size: 4vw;
+}
+
+.fullHeightAndWidth {
+  width: 100%;
+  height: 100%;
+}

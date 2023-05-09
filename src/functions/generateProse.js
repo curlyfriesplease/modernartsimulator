@@ -45,7 +45,7 @@ const sentenceTypeA = () => {
     randomWords.words[Math.floor(Math.random() * randomWords.words.length)];
   const randomWord2 =
     randomWords.words[Math.floor(Math.random() * randomWords.words.length)];
-  return `The work explores the relationship between ${randomWord1} and ${randomWord2}. `;
+  return `The work explores the challenging relationship between ${randomWord1} and ${randomWord2}. `;
 };
 
 const sentenceTypeB = () => {
@@ -66,7 +66,7 @@ const sentenceTypeB = () => {
     negativeWords.negatives[
       Math.floor(Math.random() * negativeWords.negatives.length)
     ];
-  return `Influenced by ${influence1} and ${influence2}, meaningful expressions are created from ${positive1} and ${negative1}. `;
+  return `Influenced by ${influence1} and ${influence2}, meaningfully confronting ${positive1} and ${negative1}. `;
 };
 
 const sentenceTypeC = () => {
@@ -181,5 +181,5 @@ const sentenceTypeI = () => {
     positiveWords.positives[
       Math.floor(Math.random() * positiveWords.positives.length)
     ];
-  return `The piece is part of the artist's ongoing exploration of ${exploration1} and of their own ${exploration2}. `;
+  return `The piece is part of the artist's ongoing exploration of ${exploration1} and confronting their own ${exploration2}. `;
 };
