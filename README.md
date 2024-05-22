@@ -1,6 +1,7 @@
 # Intro
 
 This app simulates the frustration of reading the modern art description prose at modern art galleries, particularly the Pompidou Centre.
+Update May 2024: This was more amusing before the recent advent of millions of AI sites that do very similar things. This doesn't use AI and was funnier at the time :D
 
 ## Setup
 
